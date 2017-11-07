@@ -1,0 +1,19 @@
+{
+  "name": "bumic-web",
+  "version": "0.2.0",
+  "description": "Boston University Machine Intelligence Community website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuik/bumic-web.git"
+  },
+  "author": "Duy Nguyen <zui@bu.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zuik/bumic-web/issues"
+  },
+  "homepage": "https://github.com/zuik/bumic-web#readme"
+}
