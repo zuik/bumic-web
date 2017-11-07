@@ -1,46 +1,64 @@
 /*
-This is the navbar code in HTML
+Navbar.js
 
-<header class="container-fluid">
-    <div class="wrapper" id="navbar">
-        <div id="dummy-div"></div>
-        <div id="menu-section">
-            <ul class="nav navigation" id="menu">
-                <li class="nav-item"><a href="#about">ABOUT</a></li>
-                <li class="nav-item"><a href="#news">NEWS</a></li>
-                <li class="nav-item"><a href="#members">MEMBERS</a></li>
-                <li class="nav-item"><a href="#teams">TEAMS</a></li>
-                <li class="nav-item"><a href="#sponsors">SPONSORS</a></li>
-            </ul>
-        </div>
-        <div id="social_section">
-            <div id="fb-icon">
-                <a href="https://www.facebook.com/groups/1017831178363028/?ref=bookmarks">
-                    <img src="image/icons/fb.png">
-                </a>
-            </div>
-            <div id="github-icon">
-                <a href="https://github.com/bumic">
-                    <img src="image/icons/github.png">
-                </a>
-            </div>
-            <div id="mail-icon">
-                <a href="mailto:bumic@bu.edu">
-                    <img src="image/icons/mail.png">
-                </a>
-            </div>
-            <div id="medium-icon">
-                <a href="https://medium.com/@bumic_">
-                    <img src="image/icons/medium.png">
-                </a>
-            </div>
-            <div id="twitter-icon">
-                <a href="https://twitter.com/@bumic_">
-                    <img src="image/icons/twitter.png">
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
-
+Navigation bar, composed of the link to various section and the social icons.
  */
+
+import React, {Component} from 'react';
+import './Navbar.css';
+
+class NavItem extends Component {
+    render() {
+        return (
+            <li className="nav-item">
+                <a href={`#${this.props.section}`}>{this.props.sectionText}</a>
+            </li>
+        );
+    }
+}
+
+class SocialIcon extends Component {
+    render() {
+        return (
+            <div className="icon">
+                <a href={this.props.url}>
+                    <i className={`fa fa-lg fa-${this.props.kind}`} aria-hidden="true">
+                    </i>
+                </a>
+            </div>
+        );
+    }
+}
+
+
+class Navbar extends Component {
+    render() {
+        return (
+            <header className="container-fluid">
+                <div className="wrapper" id="navbar">
+                    <div id="dummy-div">
+                        {/* Dummy div to push the nav-bar to middle */}
+                    </div>
+                    <div id="menu-section">
+                        <ul className="nav navigation" id="menu">
+                            <NavItem section="about" sectionText="ABOUT"/>
+                            <NavItem section="news" sectionText="NEWS"/>
+                            <NavItem section="members" sectionText="MEMBERS"/>
+                            <NavItem section="teams" sectionText="TEAMS"/>
+                            <NavItem section="sponsors" sectionText="SPONSORS"/>
+                        </ul>
+                    </div>
+                    <div id="social-section">
+                        <SocialIcon kind="facebook-official" url="https://www.facebook.com/groups/1017831178363028"/>
+                        <SocialIcon kind="github" url="https://github.com/bumic"/>
+                        <SocialIcon kind="envelope-o" url="mailto:bumic@bu.edu"/>
+                        <SocialIcon kind="medium" url="https://medium.com/@bumic_"/>
+                        <SocialIcon kind="twitter" url="https://twitter.com/@bumic_"/>
+                    </div>
+                </div>
+            </header>
+        );
+    }
+}
+
+export default Navbar;
