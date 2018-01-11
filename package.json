@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/zuik/bumic-web.git"
   },
-  "author": "Duy Nguyen <zui@bu.edu>",
+  "author": "BUMIC <bumic@bu.edu>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zuik/bumic-web/issues"
